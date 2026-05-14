@@ -28,3 +28,6 @@ time_zone_info-*.tar
 
 # test temp dir
 /test/temp
+
+# ignore mise
+mise.toml
