@@ -34,6 +34,11 @@ defmodule TimeZoneInfo.IanaDateTimeTest do
                to_gregorian_seconds(~N[1999-02-03 10:11:12])
     end
 
+    test "with 24:00 as midnight at the end of the day" do
+      assert IanaDateTime.to_gregorian_seconds({1999, 2, 3, 24, 0, 0}) ==
+               to_gregorian_seconds(~N[1999-02-04 00:00:00])
+    end
+
     test "with day as last day of week" do
       # The last Monday in February 2019.
       day = [last_day_of_week: 1]
